@@ -168,38 +168,32 @@ stock ConvertColour(colour, ColourMode:from, ColourMode:to, Float:alpha = 1.0) {
 
     switch (from) {
         case COLOUR_MODE_RGBA: {
-            switch (to) {
-                case COLOUR_MODE_ARGB: {
-                    colour = ((colour << 24) & 0xFF000000) | ((colour >>> 8) & 0xFFFFFF);
-                }
-
-                case COLOUR_MODE_RGB: {
-                    colour = (colour >>> 8) & 0xFFFFFF;
-                }
+            if (to == COLOUR_MODE_ARGB) {
+                colour = ((colour << 24) & 0xFF000000) | ((colour >>> 8) & 0xFFFFFF);
+            }
+            
+            else if (to == COLOUR_MODE_RGB) {
+                colour = (colour >>> 8) & 0xFFFFFF;
             }
         }
 
         case COLOUR_MODE_ARGB: {
-            switch (to) {
-                case COLOUR_MODE_RGBA: {
-                    colour = ((colour << 8) & 0xFFFFFF00) | ((colour >>> 24) & 0xFF);
-                }
+            if (to == COLOUR_MODE_RGBA) {
+                colour = ((colour << 8) & 0xFFFFFF00) | ((colour >>> 24) & 0xFF);
+            }
 
-                case COLOUR_MODE_RGB: {
-                    colour = colour & 0x00FFFFFF;
-                }
+            else if (to == COLOUR_MODE_RGB) {
+                colour = colour & 0x00FFFFFF;
             }
         }
 
         case COLOUR_MODE_RGB: {
-            switch (to) {
-                case COLOUR_MODE_RGBA: {
-                    colour = (colour << 8) | a;
-                }
+            if (to == COLOUR_MODE_RGBA) {
+                colour = (colour << 8) | a;
+            }
 
-                case COLOUR_MODE_ARGB: {
-                    colour = colour | (a << 24);
-                }
+            else if (to == COLOUR_MODE_ARGB) {
+                colour = colour | (a << 24);
             }
         }
     }
