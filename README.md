@@ -1,6 +1,6 @@
 # PAWN Colour Manipulation
 
-[![sampctl](https://img.shields.io/badge/sampctl-pawn--colour--manipulation-2f2f2f.svg?style=for-the-badge)](https://github.com/kristoisberg/pawn-colour-manipulation)
+[![sampctl](https://img.shields.io/badge/sampctl-pawn--colour--manipulation-2f2f2f.svg?style=for-the-badge)](https://github.com/r4sheed/pawn-colour-manipulation)
 
 **Notice:** This repository is not being actively maintained anymore. If anyone wishes to continue the development of the project, please create a fork of the repository and release future versions there.
 
@@ -11,7 +11,7 @@ This library provides a number of easy-to-use colour manipulation functions for 
 Simply install to your project:
 
 ```bash
-sampctl package install kristoisberg/pawn-colour-manipulation
+sampctl package install r4sheed/pawn-colour-manipulation
 ```
 
 Include in your code and begin using the library:
